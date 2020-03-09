@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Tianle Lin&#39;s Blog">
 <meta property="og:description" content="写在前面 ​    因为选修课的缘故，就要用到Ubuntu 18.04 LTS来写东西。老师给的要求是VMware+Ubuntu18+OpenCV。但目前的surface用虚拟机还是太吃力，不仅是运行还是存储上都不宽裕，因此用了别的奇技淫巧。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-02-26T09:54:07.537Z">
+<meta property="og:updated_time" content="2020-02-27T01:42:19.178Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ubuntu-Toss-Record">
 <meta name="twitter:description" content="写在前面 ​    因为选修课的缘故，就要用到Ubuntu 18.04 LTS来写东西。老师给的要求是VMware+Ubuntu18+OpenCV。但目前的surface用虚拟机还是太吃力，不仅是运行还是存储上都不宽裕，因此用了别的奇技淫巧。">
@@ -314,7 +314,7 @@
 <ol>
 <li><p>v2ray（科学上网）。</p>
 <p>​    这时看到了油管上 <a href="https://www.youtube.com/watch?v=CiN5nInMKOE" target="_blank" rel="noopener">Ubuntu系统如何使用v2ray客户端</a> 一通操作用另一个电脑下下来必要的文件用U盘导入（为什么不直接下呢？因为没有科学上网下不下来，就形成了一个出不去的闭环）。可怜的是我连文本编辑器也不会用，照着教程下载脚本文件。默默地在terminal上录入bash &gt;curl，告诉我要apt install curl. 这时，我便学会了 apt 相关的命令，发现原来安装软件也是容易的（当然也要网络通畅）。</p>
-<p>​    将v2ray按照教程都配置好了后，也确实在运行，可我依然无法科学。（忙活几小时）继续google，找到了v2ray的GUI。<a href="https://mahongfei.com/1776.html" target="_blank" rel="noopener">Linux配置v2ray详细教程</a> 才知道这个 <a href="https://github.com/Qv2ray/Qv2ray/releases/tag" target="_blank" rel="noopener">Qv2ray</a> 按照流程来，也确实看到在运行了，可老是出错，类似于 Failed to read response from … 可我百思不得其解，该做的设置也做了，可怎么就不行呢。直到我查询类似的错误信息时，<a href="https://github.com/v2ray/v2ray-core/issues/1043" target="_blank" rel="noopener">发现了这个</a>。最终看到了电脑的时间，将时间调准后，成功。 最后顺着这条思路寻找，原来：<a href="https://blog.csdn.net/gatieme/article/details/51883981" target="_blank" rel="noopener">Ubuntu和Windows默认的时间管理方式不同，所以切换系统发生时间错乱</a>。</p>
+<p>​    将v2ray按照教程都配置好了后，也确实在运行，可我依然无法科学。（忙活几小时）继续google，找到了v2ray的GUI。<a href="https://mahongfei.com/1776.html" target="_blank" rel="noopener">Linux配置v2ray详细教程</a> 才知道这个 <a href="https://github.com/Qv2ray/Qv2ray/releases/tag" target="_blank" rel="noopener">Qv2ray</a> 按照流程来，也确实看到在运行了，可老是出错，类似于 Failed to read response from … 可我百思不得其解，该做的设置也做了，可怎么就不行呢。直到我查询类似的错误信息时，<a href="https://github.com/v2ray/v2ray-core/issues/1043" target="_blank" rel="noopener">发现了这个</a>。最终看到了电脑的时间，将时间调准后，成功。 最后顺着这条思路寻找，原来：<a href="https://blog.csdn.net/gatieme/article/details/51883981" target="_blank" rel="noopener">Ubuntu和Windows默认的时间管理方式不同，所以切换系统发生时间错乱</a>（经尝试，此方法在18.04 版本中不适用）。找到另一个 <a href="http://ubuntuhandbook.org/index.php/2016/05/time-differences-ubuntu-1604-windows-10/" target="_blank" rel="noopener">How to Fix Time Differences in Ubuntu 16.04 &amp; Windows 10 Dual Boot</a></p>
 <p>​    自此，科学上网的问题大部分被解决。</p>
 </li>
 <li><p>文本编辑器。</p>
@@ -338,7 +338,25 @@
 <p>​    安装OpenCV怎么都装不上呀，网络问题还是存在的。想到了切换国内源，一查也是可行的。<a href="https://blog.csdn.net/yucicheung/article/details/79095742" target="_blank" rel="noopener">Ubuntu16.04下配置pip国内镜像源加速安装</a> </p>
 </li>
 </ol>
-<h4 id="最终总算配置完全。"><a href="#最终总算配置完全。" class="headerlink" title="最终总算配置完全。"></a>最终总算配置完全。</h4><h2 id="二次尝试"><a href="#二次尝试" class="headerlink" title="二次尝试"></a>二次尝试</h2><p>​    To be continued…</p>
+<h4 id="最终总算配置完全。"><a href="#最终总算配置完全。" class="headerlink" title="最终总算配置完全。"></a>最终总算配置完全。</h4><h2 id="二次尝试"><a href="#二次尝试" class="headerlink" title="二次尝试"></a>二次尝试</h2><p>​    最扫兴的事当属你花了比较多的沉没成本时，你又不得不脱离。当折腾了良久后配置完成一个运行良好的Ubuntu后，你的存储不够用了。当我执行一次update后，运行失败，排查错误，发现Ubuntu可用存储几乎没有了，查阅 <a href="http://txgcwm.github.io/blog/2014/07/01/ubuntuxi-tong-qing-li-huan-cun-,-la-ji-,-duo-yu-nei-he/" target="_blank" rel="noopener">清理缓存、垃圾、多余内核</a> 也只能清理出300mb，不知不觉我的这些操作已经占用了快3g的大小。一个32g的U盘却只能装下6g的Ubuntu，有点憋屈。</p>
+<p>​    原因是作为启动盘U盘只能为FAT32格式，而此格式只能存放单个不超过4g的文件，而我的用户信息都存放在carsper-rw中，因此无法大于4g。</p>
+<h4 id="新的-live-USB"><a href="#新的-live-USB" class="headerlink" title="新的 live USB"></a>新的 live USB</h4><p>​    无奈，重新制作足够大的live USB.</p>
+<p>​    参考：·<a href="https://www.howtogeek.com/howto/14912/create-a-persistent-bootable-ubuntu-usb-flash-drive/" target="_blank" rel="noopener">How to Create a Live Ubuntu USB Drive With Persistent Storage</a></p>
+<p>​                ·<a href="https://www.youtube.com/watch?v=LSbjekvREdU" target="_blank" rel="noopener">Create a 95% Persistent Ubuntu 18.04 LTS USB! (Part 1) 💻🖥️ - YouTube</a></p>
+<p>​    这些教程就需要用到一个虚拟机了，最后权衡之下我选择了 VirtualBox。跟着视频一步步来最后没出什么问题。</p>
+<h4 id="唯二的问题"><a href="#唯二的问题" class="headerlink" title="唯二的问题"></a>唯二的问题</h4><ol>
+<li><p>无法识别usb。</p>
+<p>​    官方有<a href="https://www.virtualbox.org/wiki/Downloads" target="_blank" rel="noopener">解决包</a>：要安装<a href="https://www.virtualbox.org/wiki/VirtualBox" target="_blank" rel="noopener">VirtualBox</a> 6.1.4 Oracle VM VirtualBox Extension Pack</p>
+<ol>
+<li>Ubuntu虚拟机无法全屏显示（或大分辨率）。[<pre><code>How To Make Ubuntu Full Screen](https://www.youtube.com/watch?v=RxmGFsaOyks)</code></pre></li>
+</ol>
+</li>
+</ol>
+<h3 id="新的之前"><a href="#新的之前" class="headerlink" title="新的之前"></a>新的之前</h3><p>​    尝试用修改U盘分区的办法，但最终失败了：<a href="https://askubuntu.com/questions/397481/how-to-make-a-persistent-live-ubuntu-usb-with-more-than-4gb" target="_blank" rel="noopener">How to make a persistent live Ubuntu USB with more than 4GB</a></p>
+<p>​    原因：This method does not work with 64 bit Ubuntu 14.04 and later.</p>
+<p>​    这也促使我知道了busybox这个东西。</p>
+<h3 id="最后的最后"><a href="#最后的最后" class="headerlink" title="最后的最后"></a>最后的最后</h3><p>​    关于安装并运行一个Ubuntu 18.04 LTS 算是告一段落了。</p>
+<p>​    可以开始使用了 _(:з」∠)_。</p>
 
       
     </div>
@@ -378,6 +396,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/03/09/Essay-one/" rel="prev" title="Essay-one">
+                Essay-one <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -454,7 +476,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -467,7 +489,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">标签</span>
                 
               </div>
@@ -500,7 +522,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#写在前面"><span class="nav-number">1.</span> <span class="nav-text">写在前面</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#初次尝试-live-USB"><span class="nav-number">1.1.</span> <span class="nav-text">初次尝试 live USB</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#食用方法"><span class="nav-number">1.1.1.</span> <span class="nav-text">食用方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开始折腾"><span class="nav-number">1.1.2.</span> <span class="nav-text">开始折腾</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#最终总算配置完全。"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">最终总算配置完全。</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二次尝试"><span class="nav-number">1.2.</span> <span class="nav-text">二次尝试</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#写在前面"><span class="nav-number">1.</span> <span class="nav-text">写在前面</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#初次尝试-live-USB"><span class="nav-number">1.1.</span> <span class="nav-text">初次尝试 live USB</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#食用方法"><span class="nav-number">1.1.1.</span> <span class="nav-text">食用方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开始折腾"><span class="nav-number">1.1.2.</span> <span class="nav-text">开始折腾</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#最终总算配置完全。"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">最终总算配置完全。</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二次尝试"><span class="nav-number">1.2.</span> <span class="nav-text">二次尝试</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#新的-live-USB"><span class="nav-number">1.2.0.1.</span> <span class="nav-text">新的 live USB</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#唯二的问题"><span class="nav-number">1.2.0.2.</span> <span class="nav-text">唯二的问题</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新的之前"><span class="nav-number">1.2.1.</span> <span class="nav-text">新的之前</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最后的最后"><span class="nav-number">1.2.2.</span> <span class="nav-text">最后的最后</span></a></li></ol></li></ol></div>
             
 
           </div>
